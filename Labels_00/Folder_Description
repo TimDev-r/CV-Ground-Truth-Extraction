@@ -1,0 +1,7 @@
+rgb.mp4 - trimmed version of initial video(edited for GitHub limits) - Needed for Visual Demonstration of Tracker Processing
+
+overview_bbox, overview_world - Tracker processing info in Plot format
+
+label.json - json file with each frame's profile, example: {"class": "person", "confidence": 0.8849821090698242, "bbox": [430.0, 228.0, 497.0, 333.0], "id": 1, "world_coordinates": [4.758, -0.3795564880371094, -0.3777014770507813]}
+
+labels.json - json file with each frame's profile + Distance-Presence Histogram , example: {"class": "person", "confidence": 0.9470406770706177, "bbox": [335.0, 57.0, 477.0, 460.0], "id": 1, "world_coordinates": [1.976, 0.10897752380371094, -0.054686988830566406], "motion": "--------------------------++++++++++++x+xxxx-------------------xx-----x-xxxx---x------------------------------------------------"}
