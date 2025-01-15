@@ -1,0 +1,152 @@
+{
+  "name": "ifxdaq.ai.compose.stage.ComposeStage",
+  "input": "recording_2024_07_02_17_22_43/Visualization_00",
+  "settings": {
+    "cleanup": true
+  },
+  "date_created": "2024-07-02T17:33:09.629177",
+  "system_information": {
+    "ifxdaq_version": "4.0.0b1",
+    "username": "",
+    "hostname": "",
+    "os": "Windows",
+    "os_release": "",
+    "os_version": "",
+    "machine": "",
+    "python_version": "3.9.13",
+    "python_implementation": "CPython",
+    "torch_version": "2.1.0.dev20230816+cu121",
+    "torchvision_version": "0.16.0.dev20230817+cu121",
+    "cuda": "True"
+  },
+  "processing_chain": [
+    {
+      "device_type": "Intel RealSense D455",
+      "serial": "243122302225",
+      "pyrealsense_version": "2.54.1",
+      "firmware": "5.13.0.55",
+      "usb_type": "3.2",
+      "color_intrinsics": {
+        "coeffs": [
+          -0.05514505133032799,
+          0.06558768451213837,
+          -2.0927809600834735e-05,
+          0.000845256436150521,
+          -0.021352319046854973
+        ],
+        "fx": 426.3390197753906,
+        "fy": 425.77215576171875,
+        "ppx": 429.50433349609375,
+        "ppy": 246.72010803222656,
+        "model": 2,
+        "height": 480,
+        "width": 848
+      },
+      "color_fov": [
+        89.67908477783203,
+        58.8076286315918
+      ],
+      "depth_intrinsics": {
+        "coeffs": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fx": 432.8127746582031,
+        "fy": 432.8127746582031,
+        "ppx": 427.03558349609375,
+        "ppy": 243.14137268066406,
+        "model": 4,
+        "height": 480,
+        "width": 848
+      },
+      "depth_scale": 0.0010000000474974513,
+      "depth_fov": [
+        88.81945037841797,
+        58.01518249511719
+      ]
+    },
+    {
+      "name": "ifxdaq.ai.yolo.stage.YOLOStage",
+      "input": "recording_2024_07_02_17_22_43/CamIntelRealSense_01",
+      "settings": {
+        "detector": {
+          "algorithm_name": "ifxdaq.ai.yolo.yolo.YOLO8",
+          "algorithm_config": {
+            "model": "yolov8x.pt",
+            "iou_threshold": 0.5,
+            "conf_threshold": 0.5
+          }
+        },
+        "classes": [
+          "person"
+        ]
+      },
+      "date_created": "2024-07-02T17:31:21.067067",
+      "system_information": {
+        "ifxdaq_version": "4.0.0b1",
+        "username": "",
+        "hostname": "",
+        "os": "Windows",
+        "os_release": "",
+        "os_version": "",
+        "machine": "",
+        "python_version": "3.9.13",
+        "python_implementation": "CPython",
+        "torch_version": "2.1.0.dev20230816+cu121",
+        "torchvision_version": "0.16.0.dev20230817+cu121",
+        "cuda": "True"
+      }
+    },
+    {
+      "name": "ifxdaq.ai.world_coordinates.stage.WorldCoordinatesStage",
+      "input": "recording_2024_07_02_17_22_43/YOLO_00",
+      "settings": {},
+      "date_created": "2024-07-02T17:32:08.212646",
+      "system_information": {
+        "ifxdaq_version": "4.0.0b1",
+        "username": "",
+        "hostname": "",
+        "os": "Windows",
+        "os_release": "",
+        "os_version": "",
+        "machine": "AMD64",
+        "python_version": "3.9.13",
+        "python_implementation": "CPython",
+        "torch_version": "2.1.0.dev20230816+cu121",
+        "torchvision_version": "0.16.0.dev20230817+cu121",
+        "cuda": "True"
+      }
+    },
+    {
+      "name": "ifxdaq.ai.visualization.stage.VisualizationStage",
+      "input": "recording_2024_07_02_17_22_43/WorldCoordinates_00",
+      "settings": {
+        "anonymization": {
+          "type": "ifxdaq.ai.visualization.anonymization.AutoAnonymization",
+          "technique": "_style_pixel",
+          "classes": [
+            "person"
+          ]
+        }
+      },
+      "date_created": "2024-07-02T17:32:08.604303",
+      "system_information": {
+        "ifxdaq_version": "4.0.0b1",
+        "username": "",
+        "hostname": "",
+        "os": "Windows",
+        "os_release": "",
+        "os_version": "",
+        "machine": "",
+        "python_version": "3.9.13",
+        "python_implementation": "CPython",
+        "torch_version": "2.1.0.dev20230816+cu121",
+        "torchvision_version": "0.16.0.dev20230817+cu121",
+        "cuda": "True"
+      }
+    }
+  ]
+}
