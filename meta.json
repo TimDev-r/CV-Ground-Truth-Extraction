@@ -1,0 +1,15 @@
+{
+  "ifxdaq_version": "3.3.0",
+  "username": "Ibragimov",
+  "hostname": "ISCN5CG3125XVG",
+  "os": "Windows",
+  "os_release": "10",
+  "os_version": "10.0.22621",
+  "machine": "AMD64",
+  "python_version": "3.9.13",
+  "python_implementation": "CPython",
+  "torch_version": "1.8.0+cpu",
+  "torchvision_version": "0.9.0+cpu",
+  "cuda": "False",
+  "date_captured": "2024-07-02T17:22:43.976371"
+}
